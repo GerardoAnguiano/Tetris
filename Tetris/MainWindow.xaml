@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Tetris"
         mc:Ignorable="d"
-        Title="Tetris" Height="673.13" Width="752.633">
+        Title="Tetris" Height="673.13" Width="767.555">
     <Window.Background>
         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
             <GradientStop Color="Black" Offset="0"/>
@@ -14,13 +14,13 @@
     </Window.Background>
     <Grid Margin="0,0,140,0">
         <Grid HorizontalAlignment="Left" Height="100" Margin="290,95,0,0" VerticalAlignment="Top" Width="100">
-            <DataGrid HorizontalAlignment="Left" Height="481" Margin="-267,30,0,-411" VerticalAlignment="Top" Width="280" RenderTransformOrigin="0.5,0.5" SelectionChanged="DataGrid_SelectionChanged" Background="Black" BorderBrush="Black" OpacityMask="#FF0C0404">
+            <DataGrid x:Name="tetrisGrid" Margin="-282,15,102,-441" RenderTransformOrigin="0.531,0.104" SelectionChanged="DataGrid_SelectionChanged" Background="Black" BorderBrush="Black" OpacityMask="#FF0C0404">
                 <DataGrid.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
-                        <SkewTransform AngleX="-0.213"/>
+                        <SkewTransform AngleX="-0.213" AngleY="-0.309"/>
                         <RotateTransform Angle="-0.329"/>
-                        <TranslateTransform X="0.62"/>
+                        <TranslateTransform X="0.203" Y="-0.852"/>
                     </TransformGroup>
                 </DataGrid.RenderTransform>
             </DataGrid>
@@ -33,7 +33,7 @@
                 </LinearGradientBrush>
             </TextBlock.Background>
         </TextBlock>
-        <Button Content="INICIAR" HorizontalAlignment="Left" Margin="444,458,0,0" VerticalAlignment="Top" Width="151" Height="84" Foreground="White" FontSize="20" FontFamily="Tekton Pro Ext">
+        <Button x:Name="starStopBtn" Content="INICIAR" HorizontalAlignment="Left" Margin="444,458,0,0" VerticalAlignment="Top" Width="151" Height="84" Foreground="White" FontSize="20" FontFamily="Tekton Pro Ext">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="0"/>
@@ -41,7 +41,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <TextBlock HorizontalAlignment="Left" Margin="549,95,-59,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Height="64" Width="115" FontSize="48" RenderTransformOrigin="0.5,0.5" Foreground="White" FontFamily="Tekton Pro Ext">
+        <TextBlock x:Name="scoreTxt" HorizontalAlignment="Left" Margin="549,95,-59,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Height="64" Width="115" FontSize="48" RenderTransformOrigin="0.5,0.5" Foreground="White" FontFamily="Tekton Pro Ext">
             <TextBlock.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="0"/>
@@ -50,7 +50,7 @@
                 </LinearGradientBrush>
             </TextBlock.Background>
         </TextBlock>
-        <TextBlock HorizontalAlignment="Left" Margin="334,264,-123,0" TextWrapping="Wrap" Text="PERDISTE LOSER XD " VerticalAlignment="Top" Height="90" Width="394" FontSize="36" FontFamily="Wide Latin" Foreground="#FFE65771" RenderTransformOrigin="0.5,0.5">
+        <TextBlock x:Name="GameOverTxt" HorizontalAlignment="Left" Margin="326,176,-115,0" TextWrapping="Wrap" Text="PERDISTE LOSER XD " VerticalAlignment="Top" Height="90" Width="394" FontSize="36" FontFamily="Wide Latin" Foreground="#FFE65771" RenderTransformOrigin="0.5,0.5">
             <TextBlock.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -61,6 +61,10 @@
             </TextBlock.RenderTransform>
         </TextBlock>
         <TextBlock HorizontalAlignment="Left" Margin="78,58,0,0" TextWrapping="Wrap" Text="TETRIS" VerticalAlignment="Top" Height="46" Width="173" Foreground="White" FontSize="48" FontFamily="Tekton Pro Ext"/>
+        <Label x:Name="nextTxt" Content="SIGUIENTE" HorizontalAlignment="Left" Margin="327,277,0,0" VerticalAlignment="Top" Height="51" Width="182" Foreground="#FFFBFBFB" FontSize="36"/>
+        <Canvas x:Name="nextShapeCanvas" HorizontalAlignment="Left" Height="100" Margin="584,300,-79,0" VerticalAlignment="Top" Width="100">
+            <TextBlock x:Name="levelTxt" TextWrapping="Wrap" Text="NIVEL" Canvas.Left="-240" Canvas.Top="86" FontSize="36" Foreground="White" RenderTransformOrigin="-0.083,0.625"/>
+        </Canvas>
 
     </Grid>
 </Window>
